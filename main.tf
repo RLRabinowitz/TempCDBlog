@@ -3,7 +3,7 @@ terraform {
 }
 
 module "my_website" {
-  source = "my-website-bucket"
+  source = "./my-website-bucket"
 
   name = "env0.my-website.cd.blog.com"
   html_file_source = "index.html"
