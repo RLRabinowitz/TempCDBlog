@@ -45,6 +45,13 @@ resource "aws_s3_bucket_policy" "website_bucket_policy" {
 POLICY
 }
 
+resource "aws_s3_bucket_object" "object" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = var.html_file_source
+  source = var.html_file_source
+  content_type = "text/html"
+}
+
 output "website_endpoint" {
   value = aws_s3_bucket.website_bucket.website_endpoint
 }
